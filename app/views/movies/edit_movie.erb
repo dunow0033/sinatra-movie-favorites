@@ -1,0 +1,16 @@
+<h1>Edit Movie Title Here: </h1>
+<!--<h1>Edit Movie Title and Shelf Here: </h1>-->
+
+<form method="POST" action="/movies/<%= @movie.id %>">
+    <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+    Title:  <input type="text" id="title" name="title" value="<%= @movie.title %>">
+    <br><br>
+    <!-- Shelf:  <select id="shelf" name="shelf">
+        <option value="comedy">Comedy</option>
+        <option value="action">Action</option>
+        <option value="horror">Horror</option>
+        <option value="drama">Drama</option>
+    </select> -->
+    <button type="submit">Send Changes</button>
+</form>
