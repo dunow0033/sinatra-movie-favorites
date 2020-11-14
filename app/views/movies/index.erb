@@ -1,71 +1,73 @@
 <h1>Favorite movies for <%= current_user.username %></h1>
 <br>
 <br>
-<% if !@drama.empty? %>
-<div style="width: 200px;display: inline-block;">
-<h1>DRAMA</h1>
-    <% @drama.each do | movie | %>
-        <li>Title:  <%= movie.title %> <br>
-        <br>
-        <a href="/movies/<%= movie.id %>/edit">Edit</a>
-        &nbsp;&nbsp;
-        <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
-        </form>
-        <br>
-        <br>
+<div style="width: 100%; height: 100%">
+    <% if !@drama.empty? %>
+    <div style="text-align: center; width: 20%; height: 100%; display: inline-block; padding-top:0;">
+    <h1>DRAMA</h1>
+        <% @drama.each do | movie | %>
+            <li>Title:  <%= movie.title %> <br>
+            <br>
+            <a href="/movies/<%= movie.id %>/edit">Edit</a>
+            &nbsp;&nbsp;
+            <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
+                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
+            </form>
+            <br>
+            <br>
+        <% end %>
+    </div>
+    <% end %>
+    <% if !@comedy.empty? %>
+    <div style="text-align: center; width: 20%; height: 100%; display: inline-block; padding-top:0;">
+    <h1>COMEDY</h1>
+        <% @comedy.each do | movie | %>
+            <li>Title:  <%= movie.title %> <br>
+            <br>
+            <a href="/movies/<%= movie.id %>/edit">Edit</a>
+            &nbsp;&nbsp;
+            <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
+                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
+            </form>
+            <br>
+            <br>
+        <% end %>
+    </div>
+    <% end %>
+    <% if !@action.empty? %>
+    <div style="text-align: center; width: 20%; height: 100%; display: inline-block; padding-top:0;">
+    <h1>ACTION</h1>
+        <% @action.each do | movie | %>
+            <li>Title:  <%= movie.title %> <br>
+            <br>
+            <a href="/movies/<%= movie.id %>/edit">Edit</a>
+            &nbsp;&nbsp;
+            <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
+                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
+            </form>
+            <br>
+            <br>
+        <% end %>
+    </div>
+    <% end %>
+    <% if !@horror.empty? %>
+    <div style="text-align: center; width: 20%; height: 100%; display: inline-block; margin-top:0;">
+    <h1>HORROR</h1>
+        <% @horror.each do | movie | %>
+            <li>Title:  <%= movie.title %> <br>
+            <br>
+            <a href="/movies/<%= movie.id %>/edit">Edit</a>
+            &nbsp;&nbsp;
+            <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
+                <input id="hidden" type="hidden" name="_method" value="DELETE">
+                <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
+            </form>
+            <br>
+            <br>
+        <% end %>
+    </div>
     <% end %>
 </div>
-<% end %>
-<% if !@comedy.empty? %>
-<h1>COMEDY</h1>
-<div style="width: 200px;display: inline-block;">
-    <% @comedy.each do | movie | %>
-        <li>Title:  <%= movie.title %> <br>
-        <br>
-        <a href="/movies/<%= movie.id %>/edit">Edit</a>
-        &nbsp;&nbsp;
-        <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
-        </form>
-        <br>
-        <br>
-    <% end %>
-</div>
-<% end %>
-<% if !@action.empty? %>
-<h1>ACTION</h1>
-<div style="width: 200px;display: inline-block;">
-    <% @action.each do | movie | %>
-        <li>Title:  <%= movie.title %> <br>
-        <br>
-        <a href="/movies/<%= movie.id %>/edit">Edit</a>
-        &nbsp;&nbsp;
-        <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
-        </form>
-        <br>
-        <br>
-    <% end %>
-</div>
-<% end %>
-<% if !@horror.empty? %>
-<h1>HORROR</h1>
-<div style="width: 200px;display: inline-block;">
-    <% @horror.each do | movie | %>
-        <li>Title:  <%= movie.title %> <br>
-        <br>
-        <a href="/movies/<%= movie.id %>/edit">Edit</a>
-        &nbsp;&nbsp;
-        <form action="/movies/<%= movie.id %>" method="post" style="display: inline-block;">
-            <input id="hidden" type="hidden" name="_method" value="DELETE">
-            <button type="submit" name="delete" value="delete" class="btn-link">Delete</button>
-        </form>
-        <br>
-        <br>
-    <% end %>
-</div>
-<% end %>
