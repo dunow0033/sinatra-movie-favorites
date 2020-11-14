@@ -39,16 +39,7 @@ class MoviesController < ApplicationController
           else  
             movie = Movie.create(title: params[:title], shelf: params[:shelf])
             current_user.movies << movie
-            redirect to "/movies/#{movie.id}"
-        end 
-    end
-
-    get '/movies/:id' do 
-        if logged_in? 
-            @movie = Movie.find_by_id(params[:id])
-            erb :'movies/show_movie'
-        else
-            redirect to '/login'
+            redirect "/movies"
         end 
     end
 
@@ -73,7 +64,7 @@ class MoviesController < ApplicationController
         else  
             @movie.update(title: params[:title], shelf: params[:shelf])
             
-            redirect to "/movies/#{@movie.id}"
+            redirect to "/movies"
         end 
     end 
 
