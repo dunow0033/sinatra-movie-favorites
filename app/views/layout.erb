@@ -16,11 +16,13 @@
         <p>Hello <%=current_user.username %>!!</p>
 
       <% else %>
-        <a href="/signup">Sign Up</a>
+        <a href="/signup">Become a Favorite Movie Organizer!!</a>
+        &nbsp;
+        &nbsp;
         <a href="/login"> Sign In </a>
       <%end %>
 
-    <div class="container">
+    <div>
       <h1>It's the Movie Favorites App!!</h1>
       <%= yield %>
     </div>
