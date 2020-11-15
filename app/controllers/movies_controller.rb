@@ -6,7 +6,7 @@ class MoviesController < ApplicationController
         @action = []
         @horror = []
 
-        Movie.all.each do | movie |
+        current_user.movies.each do | movie |
             if movie.shelf == "Drama"
                 @drama << movie
             elsif movie.shelf == "Comedy" 
@@ -36,7 +36,7 @@ class MoviesController < ApplicationController
     post '/movies' do
         if params[:title] == ""
             redirect to '/movies/new'
-          else  
+          else 
             movie = Movie.create(title: params[:title], shelf: params[:shelf])
             current_user.movies << movie
             redirect "/movies"
