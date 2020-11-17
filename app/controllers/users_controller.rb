@@ -8,12 +8,15 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
+        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
+
         if params[:username] == "" || params[:email] == '' || params[:password] == ''
-            redirect '/signup'
+            @error = "All fields are required!!  Please try again!!"
+            erb :'users/create_user'
         elsif User.find_by(username: params[:username])
-            redirect '/signup'
+            @error = "That name is already taken!!  Please choose another!!"
+            erb :'users/create_user'
         else
-            @user = User.new(username: params[:username], email: params[:email], password: params[:password])
             @user.save
             session[:user_id] = @user.id
             redirect '/movies'
@@ -35,6 +38,7 @@ class UsersController < ApplicationController
             session[:user_id] = @user.id
             redirect '/movies'
         else
+            @error = "Sorry, invalid user credentials.  Please try again, or sign up for a new account!!"
             redirect '/login'
         end
     end

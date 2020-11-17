@@ -1,4 +1,9 @@
 <h1>Create a New Movie Lover Here!!</h1>
+<% if @error != nil %>
+        <div class="alert alert-danger" style="width: 30%;">
+            <%= @error %>
+        </div>
+<% end %>
 <form method="POST" action="/signup">
     <label for="username">Username: </label>
     <input type="text" name="username"><br>
