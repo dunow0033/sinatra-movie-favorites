@@ -1,11 +1,37 @@
+<style>
+input[type="text"], input[type="password"] {
+  border-radius:0.5em;
+  border: 1px solid #aaa;
+  margin: 8px 2px;
+  outline: none;
+  padding: 8px;
+}
+
+input[type="text"]:hover, input[type="password"]:hover {
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #4d90fe;
+  outline: none;
+  background-color: #f3f3f3;
+}
+  
+  button[type="submit"] {
+    margin-left: 2px;
+  }
+</style>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <h3>Existing Movie Lovers Login Here!!</h3>
 <% if @error != nil %>
         <div class="alert alert-danger" style="width: 30%;">
             <%= @error %>
         </div>
 <% end %>
-<form action="/login" method="POST">
-  <input type="text" name="username">
-  <input type="password" name="password">
-  <input type="submit" value="submit">
+<form action="/login" method="POST" name="login">
+  <input type="text" name="username" placeholder="username"><br>
+  <input type="password" name="password" placeholder="password"><br>
+  <button type="submit" value="submit" class="btn btn-primary">Login</button>
 </form>

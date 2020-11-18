@@ -1,9 +1,9 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <h1>Enter new movie here</h1>
 <br>
 <br>
-<form method="POST" action="/movies">
-    <label for="title">Title: </label>
-    <input type="text" name="title" id="title">
+<form method="POST" action="/movies" name="newMovie">
+    <input type="text" name="title" id="title" placeholder="movie title">
     <br>
     <br>
     <label for="shelf" id="shelf" name="shelf">Shelf: </label>
@@ -14,5 +14,5 @@
         <option value="Drama">Drama</option>
     </select>
     <br><br>
-    <button type="submit">Create Movie!!</button>
+    <button type="submit" class="btn btn-primary">Create Movie!!</button>
 </form>

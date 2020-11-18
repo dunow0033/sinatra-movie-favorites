@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <h1>Edit Movie Here: </h1>
 
 <form method="POST" action="/movies/<%= @movie.id %>">
@@ -12,5 +13,5 @@
         <option value="Horror">Horror</option>
         <option value="Drama">Drama</option>
     </select>
-    <button type="submit">Send Changes</button>
+    <button type="submit" class="btn btn-primary">Send Changes</button>
 </form>

@@ -1,18 +1,16 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <h1>Create a New Movie Lover Here!!</h1>
 <% if @error != nil %>
         <div class="alert alert-danger" style="width: 30%;">
             <%= @error %>
         </div>
 <% end %>
-<form method="POST" action="/signup">
-    <label for="username">Username: </label>
-    <input type="text" name="username"><br>
+<form method="POST" action="/signup" name="createUser">
+    <input type="text" name="username" placeholder="username"><br>
 
-    <label for="email">Email: </label>
-    <input type="text" name="email"><br>
+    <input type="text" name="email" placeholder="email"><br>
 
-    <label for="password">Password: </label>
-    <input type="password" name="password"><br>
+    <input type="password" name="password" placeholder="password"><br>
 
-    <button type="submit" value="submit">Submit</button> 
+    <button type="submit" value="submit" class="btn btn-primary">Submit</button>
 </form>

@@ -8,8 +8,6 @@ class UsersController < ApplicationController
     end
 
     post '/signup' do
-        @user = User.new(username: params[:username], email: params[:email], password: params[:password])
-
         if params[:username] == "" || params[:email] == '' || params[:password] == ''
             @error = "All fields are required!!  Please try again!!"
             erb :'users/create_user'
@@ -17,6 +15,7 @@ class UsersController < ApplicationController
             @error = "That name is already taken!!  Please choose another!!"
             erb :'users/create_user'
         else
+            @user = User.new(username: params[:username], email: params[:email], password: params[:password])
             @user.save
             session[:user_id] = @user.id
             redirect '/movies'
