@@ -31,15 +31,20 @@ class UsersController < ApplicationController
         end
     end
 
-    post '/login' do
-        @user = User.find_by(username: params[:username])
-
-        if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id
-            redirect '/movies'
+    post '/login' do 
+        if params["username"].empty? || params["password"].empty?
+            @error = "username and password can't be blank!!  Please try again!!"
+            erb :'users/login'
         else
-            @error = "Sorry, invalid user credentials.  Please try again, or sign up for a new account!!"
-            redirect '/login'
+            @user = User.find_by(username: params[:username])
+
+            if @user && @user.authenticate(params[:password])
+                session[:user_id] = @user.id
+                redirect '/movies'
+            else
+                @error = "Sorry, invalid user credentials.  Please try again, or sign up for a new account!!"
+                erb :'users/login'
+            end
         end
     end
 

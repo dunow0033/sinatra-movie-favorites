@@ -1,4 +1,9 @@
-<h3>Login</h3>
+<h3>Existing Movie Lovers Login Here!!</h3>
+<% if @error != nil %>
+        <div class="alert alert-danger" style="width: 30%;">
+            <%= @error %>
+        </div>
+<% end %>
 <form action="/login" method="POST">
   <input type="text" name="username">
   <input type="password" name="password">
