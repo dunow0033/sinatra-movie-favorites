@@ -30,11 +30,11 @@ input[type="text"]:focus, input[type="password"]:focus {
         </div>
 <% end %>
 <form method="POST" action="/signup" name="createUser">
-    <input type="text" name="username" placeholder="username"><br>
+    <input type="text" name="username" placeholder="username" onfocus="this.placeholder=''" onblur="this.placeholder='username'"><br>
 
-    <input type="text" name="email" placeholder="email"><br>
+    <input type="text" name="email" placeholder="email" onfocus="this.placeholder=''" onblur="this.placeholder='email'"><br>
 
-    <input type="password" name="password" placeholder="password"><br>
+    <input type="password" name="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'"><br>
 
     <button type="submit" value="submit" class="btn btn-primary">Submit</button>
 </form>
