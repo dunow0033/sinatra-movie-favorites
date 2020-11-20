@@ -20,6 +20,25 @@ input[type="text"]:focus, input[type="password"]:focus {
   button[type="submit"] {
     margin-left: 2px;
   }
+
+  .shelf {
+    padding: 8px 12px;
+    color: #333333;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    border-radius: 0.5em;
+  }
+
+  .shelf:focus,
+  .shelf:hover {
+    outline: none;
+    border: 1px solid #bbbbbb;
+  }
+
+  .select option {
+    background: #ffffff;
+  }
 </style>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -29,13 +48,16 @@ input[type="text"]:focus, input[type="password"]:focus {
     <input type="hidden" id="hidden" name="_method" value="PATCH">
 
     Title:  <input type="text" id="title" name="title" value="<%= @movie.title %>">
-    <br><br>
-    <label for="shelf" id="shelf" name="shelf">Shelf: </label>
-    <select id="shelf" name="shelf">
+    &nbsp;
+    &nbsp;
+    <select id="shelf" name="shelf" class="shelf">
+        <option disabled selected>Shelf</option>
         <option value="Comedy">Comedy</option>
         <option value="Action">Action</option>
         <option value="Horror">Horror</option>
         <option value="Drama">Drama</option>
     </select>
+    <br>
+    <br>
     <button type="submit" class="btn btn-primary">Send Changes</button>
 </form>
