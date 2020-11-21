@@ -20,6 +20,19 @@ input[type="text"]:focus, input[type="password"]:focus {
   button[type="submit"] {
     margin-left: 2px;
   }
+
+  a.signup {
+    font-size: 12px;
+    text-decoration: none;
+    margin-left: 2px;
+  }
+
+  a.signup:hover {
+    font-size: 12px;
+    text-decoration: none;
+    margin-left: 2px;
+    color: red;
+  }
 </style>
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -35,3 +48,6 @@ input[type="text"]:focus, input[type="password"]:focus {
   <input type="password" name="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'"><br>
   <button type="submit" value="submit" class="btn btn-primary">Login</button>
 </form>
+<br>
+<br>
+<a class="signup" href="/signup">Sign Up</a>
