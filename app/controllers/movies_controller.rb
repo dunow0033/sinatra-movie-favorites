@@ -1,24 +1,23 @@
 class MoviesController < ApplicationController
     get '/movies' do
-
-        @drama = []
-        @comedy = []
-        @action = []
-        @horror = []
-
-        current_user.movies.each do | movie |
-            if movie.shelf == "Drama"
-                @drama << movie
-            elsif movie.shelf == "Comedy" 
-                @comedy << movie
-            elsif movie.shelf == "Action" 
-                @action << movie
-            elsif movie.shelf == "Horror"
-                @horror << movie
-            end
-        end
-
         if logged_in?
+            @drama = []
+            @comedy = []
+            @action = []
+            @horror = []
+
+            current_user.movies.each do | movie |
+                if movie.shelf == "Drama"
+                    @drama << movie
+                elsif movie.shelf == "Comedy" 
+                    @comedy << movie
+                elsif movie.shelf == "Action" 
+                    @action << movie
+                elsif movie.shelf == "Horror"
+                    @horror << movie
+                end
+            end
+
             erb :"movies/index"
         else
             redirect '/login'
