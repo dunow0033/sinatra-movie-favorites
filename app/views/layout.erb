@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <style>
+
 body, html {
   height: 100%;
   margin: 0;
@@ -22,6 +23,7 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 </style>
   <body>
 
@@ -35,7 +37,7 @@ body, html {
       <div class="navbar-nav">
 
    <% if logged_in? %>
-        <a class="nav-item nav-link" href="/movies"> Main Movies Page </href=>
+        <a class="nav-item nav-link" href="/movies"> Main Movies Page </a>
         &nbsp;
         &nbsp;
         <a class="nav-item nav-link" href="/movies/new"> Create Movie </a>
@@ -44,7 +46,7 @@ body, html {
         <a class="nav-item nav-link" href="/logout"> Sign Out </a>
 
       <% else %>
-      <a class="nav-item nav-link" href="/movies"> Main Movies Page </href=>
+      <a class="nav-item nav-link" href="/movies"> Main Movies Page </a>
         &nbsp;
         &nbsp;
         <a class="nav-item nav-link" href="/signup">Become a Favorite Movie Organizer!!</a>
