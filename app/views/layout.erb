@@ -1,9 +1,14 @@
+<!-- The main html layout page that is showing the top menu, the main heading, the background image, what links are shown on the top menu depending on whether a user
+is logged in or not -->
 <!doctype html>
 <html>
   <head>
     <title>Movie Favorites!!</title>
+    <!-- inluding correct file for bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
+
+  <!-- styling to add the background image -->
   <style>
 
 body, html {
@@ -29,6 +34,7 @@ body, html {
 
   <div class="bg">
 
+  <!-- the bootstrap main navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,6 +42,7 @@ body, html {
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
 
+<!-- erb code checking if the user is logged in, and displaying the main movies page link, the create movie link, and the sign out link -->
    <% if logged_in? %>
         <a class="nav-item nav-link" href="/movies"> Main Movies Page </a>
         &nbsp;
@@ -45,6 +52,7 @@ body, html {
         &nbsp;
         <a class="nav-item nav-link" href="/logout"> Sign Out </a>
 
+<!--the case for the user not being logged in, again showing the main movies page, and the Sign up link -->
       <% else %>
       <a class="nav-item nav-link" href="/movies"> Main Movies Page </a>
         &nbsp;
@@ -58,6 +66,7 @@ body, html {
   </div>
   </nav>
 
+<!-- The main heading, followed by the erb yield code, placing content from other pages on this main page -->
     <div>
       <h1 style="margin-left: 13%;"><a class="nav-item nav-link" href="/movies">It's the Movie Favorites App!!</a></h1>
       <%= yield %>
