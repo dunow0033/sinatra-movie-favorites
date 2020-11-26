@@ -1,3 +1,5 @@
+<!--styling used for the username textboxes and passwords for regular use and hovering -->
+
 <style>
 input[type="text"], input[type="password"] {
   border-radius:0.5em;
@@ -36,14 +38,19 @@ input[type="text"]:focus, input[type="password"]:focus {
   }
 </style>
 
+<!--including bootstrap in the app -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <h3>Existing Movie Lovers Login Here!!</h3>
+
+<!--display error message if username or password is invalid -->
 <% if @error != nil %>
         <div class="alert alert-danger" style="width: 30%;">
             <%= @error %>
         </div>
 <% end %>
+
+<!--form for getting username and password and logging in -->
 <form action="/login" method="POST" name="login">
   <input type="text" name="username" placeholder="username" onfocus="this.placeholder=''" onblur="this.placeholder='username'"><br>
   <input type="password" name="password" placeholder="password" onfocus="this.placeholder=''" onblur="this.placeholder='password'"><br>
@@ -51,4 +58,6 @@ input[type="text"]:focus, input[type="password"]:focus {
 </form>
 <br>
 <br>
+
+<!--additional link, besides the one in the top menu for signing up a new user -->
 <a class="signup" href="/signup">Sign Up</a>
