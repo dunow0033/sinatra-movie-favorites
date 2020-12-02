@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
     get '/signup' do
-        if !session[:user_id]
-            erb :'users/create_user'
-        else
+        if logged_in?
             redirect "/movies"
+        else
+            erb :'users/create_user'
         end
     end
 
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
             @user = User.find_by(username: params[:username])
 
             if @user && @user.authenticate(params[:password])
+                binding.pry
                 session[:user_id] = @user.id
                 redirect '/movies'
             else

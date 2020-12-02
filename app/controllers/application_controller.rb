@@ -1,5 +1,5 @@
 #need to include the securerandom gem for generating a random session secret
-require 'securerandom'
+#require 'securerandom'
 
 #main controller class inheriting from Sinatra Base
 class ApplicationController < Sinatra::Base
@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
         set :public_folder, 'public'
         set :views, 'app/views'
         enable :sessions
-        set :session_secret, ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
+        set :session_secret, "secret"  #ENV.fetch('SESSION_SECRET') { SecureRandom.hex(64) }
     end
 
     #route for the initial homepage
