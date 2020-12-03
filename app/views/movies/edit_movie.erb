@@ -51,7 +51,7 @@ input[type="text"]:focus, input[type="password"]:focus {
     &nbsp;
     &nbsp;
     <select id="shelf" name="shelf" class="shelf">
-        <option disabled selected>Shelf</option>
+        <option value="<%= @movie.shelf %>" selected>Shelf</option>
         <option value="Comedy">Comedy</option>
         <option value="Action">Action</option>
         <option value="Horror">Horror</option>
