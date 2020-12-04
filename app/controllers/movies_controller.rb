@@ -84,7 +84,8 @@ class MoviesController < ApplicationController
         #if the title is blank, redirect to the individual movie's edit form
         if params[:title] == ""
             redirect to "/movies/#{@movie.id}/edit"
-            #check if user logged in is the same user that owns the movie
+            #check if user logged in is the same user that owns the movie, 
+            #if they are not, redirect back to login
         elsif session[:user_id] != @movie.user_id
             redirect '/login'
         else
@@ -101,9 +102,13 @@ class MoviesController < ApplicationController
         #find the movie by it's id
         @movie = Movie.find_by_id(params[:id])
 
+        #check if user logged in is the same user that owns the movie, 
+        #if they are not, redirect back to login
+        if session[:user_id] != @movie.user_id
+            redirect '/login'
         #If that movie is found, and the movie's user attribute
         #matches the current user, delete the movie, then redirect back to the main movies index page
-        if @movie && @movie.user == current_user
+        elsif @movie && @movie.user == current_user
             @movie.delete 
             redirect to '/movies'
         else 
