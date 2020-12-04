@@ -84,7 +84,10 @@ class MoviesController < ApplicationController
         #if the title is blank, redirect to the individual movie's edit form
         if params[:title] == ""
             redirect to "/movies/#{@movie.id}/edit"
-        else  
+            #check if user logged in is the same user that owns the movie
+        elsif session[:user_id] != @movie.user_id
+            redirect '/login'
+        else
             #otherwise, update the movie with the new movie title and shelf name that was passed in
             @movie.update(title: params[:title], shelf: params[:shelf])
             
